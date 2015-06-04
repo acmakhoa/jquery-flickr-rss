@@ -35,7 +35,8 @@ $(function () {
 	$(window).scroll(lazyLoadImage);
 
 	var imageList='';
-				
+
+	//get fave flickr : photos_faves.gne		
 	$.getJSON('http://api.flickr.com/services/feeds/photos_public.gne?id=96857256@N00&lang=en-us&format=json&jsoncallback=?', function(data) {
             $(data.items).each(function(i, item) {
 	            imageList+='<div class="col-md-4"><figure><div class="imgWrap"><img class="lazy" src="images/ajax-loader_b.gif" data-src="'+item.media.m+'"/></div><figcaption>'+item.title+'</figcaption></figure></div>';						
